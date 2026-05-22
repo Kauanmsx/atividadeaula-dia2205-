@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - EventListener</title>
+</head>
+<body>
+    <p>Escreva aqui</p>
+    <p>elemento.addEventListener('click', function() { ... })</p>
+    <button id="btn">Clique aqui</button>
+<input type="text" id="campo" placeholder="Digite algo...">     
+<p id="texto">Texto inicial</p> 
+
+    <div id="caixa" style="width: 200px; height: 200px; background-color: red;"></div>
+
+    <script>
+        const btn = document.getElementById('btn'); //  declaração da variável btn para acessar o botão "Clique aqui"
+        const cx = document.getElementById('caixa');     //declaração da variável cx para acessar a caixa vermelha
+        const campo = document.getElementById('campo');  //declaração da variável campo para acessar o campo de texto
+        const texto =  document.getElementById('texto');  //declaração da variável texto para acessar o parágrafo onde o texto será exibido
+
+        campo.addEventListener('keydown', function() {  
+           texto.innerText = 'Tecla pressionada: ' + event.key; //atualiza o conteúdo do parágrafo com o texto digitado no campo de texto   
+            texto.textContent = campo.value;
+        });
+
+        btn.addEventListener('mouseover', function() {
+            cx.style.backgroundColor = 'blue'; 
+        });
+
+        btn.addEventListener('mouseout', function() {
+            cx.style.backgroundColor = 'red'; 
+        });
+
+        
+        btn.addEventListener('click', function() {
+            console.log('Você clicou no botão!');
+        });
+
+
+    </script>
+</body>
+</html>
